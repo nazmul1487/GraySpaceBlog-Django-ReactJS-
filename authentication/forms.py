@@ -3,6 +3,7 @@ from django import forms
 from django.forms import TextInput, PasswordInput
 from django.core.exceptions import ValidationError
 from authentication.models import User
+import re
 
 
 class LoginForm(AuthenticationForm):
@@ -44,6 +45,14 @@ class RegisterForm(forms.ModelForm):
         if password2 and password1 and password2 != password1:
             raise ValidationError("Password doesn't match.")
         return password2
+
+    def clean_email(self):
+        regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+        email = self.cleaned_data['email']
+        r = User.objects.filter(email=email)
+        if r.count() or (email and not re.search(regex, email)):
+            raise ValidationError("Your email used or incorrect.")
+        return email
 
     def save(self, commit=True):
         user = super().save(commit=False)
