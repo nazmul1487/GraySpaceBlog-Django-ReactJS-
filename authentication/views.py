@@ -3,7 +3,7 @@ from .forms import LoginForm, RegisterForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
-
+from django.contrib import messages
 
 # LOGIN VIEW ENDPOINT
 class UserLoginView(SuccessMessageMixin, LoginView):
@@ -19,3 +19,15 @@ class UserRegisterView(SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('login')
     template_name = 'register.html'
     success_message = "You have registered successfully!!!"
+
+
+# LOGOUT VIEW ENDPOINT
+class UserLogoutView(LogoutView):
+    template_name = 'logout.html'
+    next_page = '/'
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.add_message(request, messages.ERROR, 'Successfully logged out.')
+        response = super().dispatch(request, *args, **kwargs)
+        return response
