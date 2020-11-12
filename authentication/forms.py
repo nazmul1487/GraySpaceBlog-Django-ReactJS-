@@ -15,3 +15,39 @@ class LoginForm(AuthenticationForm):
     }), required=True)
 
 
+class RegisterForm(forms.ModelForm):
+    first_name = forms.CharField(widget=forms.TextInput(attrs={
+                'class': 'form-control'}), required=True)
+    last_name = forms.CharField(widget=forms.TextInput(attrs={
+                'class': 'form-control'}), required=True)
+    email = forms.CharField(widget=forms.EmailInput(attrs={
+                'class': 'form-control'}), required=True)
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={
+                'class': 'form-control'}), required=True)
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={
+                'class': 'form-control'}), required=True)
+
+    class Meta:
+        model = User
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'password1',
+            'password2'
+        ]
+
+    def clean_password2(self):
+        password1 = self.cleaned_data['password1']
+        password2 = self.cleaned_data['password2']
+
+        if password2 and password1 and password2 != password1:
+            raise ValidationError("Password doesn't match.")
+        return password2
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data['password1'])
+        if commit:
+            user.save()
+        return user

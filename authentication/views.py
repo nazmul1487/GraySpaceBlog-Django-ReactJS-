@@ -1,6 +1,8 @@
 from django.contrib.auth.views import LoginView, LogoutView
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 
 # LOGIN VIEW ENDPOINT
@@ -10,3 +12,10 @@ class UserLoginView(SuccessMessageMixin, LoginView):
     template_name = 'login.html'
     success_message = "You have successfully logged in!!!"
 
+
+# REGISTER VIEW ENDPOINT
+class UserRegisterView(SuccessMessageMixin, CreateView):
+    form_class = RegisterForm
+    success_url = reverse_lazy('login')
+    template_name = 'register.html'
+    success_message = "You have registered successfully!!!"
