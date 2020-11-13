@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'posts',
     'restapi',
     'rest_framework',
+    'react_app',
+
 ]
 
 MIDDLEWARE = [
