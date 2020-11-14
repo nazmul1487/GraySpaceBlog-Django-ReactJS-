@@ -17,16 +17,14 @@ const Login = () => {
     };
     verifyToken(data)
       .then((res) => {
-        window.location.href = "/react";
-        console.log(res);
+        window.location.href = "/react_app";
+
       })
       .catch((error) => {
-        console.log("Login -> error", error);
       });
   }, [token]);
 
   const doLogin = (values) => {
-      console.log(values);
     postLogin(values)
       .then((response) => {
         const { data } = response;
@@ -36,7 +34,6 @@ const Login = () => {
         alert("You are Successfully Logged in");
       })
       .catch((error) => {
-          console.log(error)
         alert("Enter a valid Email and Password");
       });
   };
