@@ -9,10 +9,8 @@ const loginField = {
   email: "",
   password: "",
 };
-
 const Login = () => {
   const token = localStorage.getItem("accessToken");
-
   useEffect(() => {
     const data = {
       token: token,
@@ -34,7 +32,7 @@ const Login = () => {
         const { data } = response;
         localStorage.setItem("accessToken", data.access);
         localStorage.setItem("refreshToken", data.refresh);
-        window.location.href = "/react";
+        window.location.href = "/react_app";
         alert("You are Successfully Logged in");
       })
       .catch((error) => {

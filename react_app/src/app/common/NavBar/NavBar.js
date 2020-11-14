@@ -36,14 +36,14 @@ const NavBar = () => {
       <div className="collapse navbar-collapse" id="responsive-navbar-nav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/react/posts">
+            <NavLink className="nav-link" to="/react_app/posts">
               Posts
             </NavLink>
           </li>
 
           {authenticate === true && (
             <li className="nav-item">
-              <Link className="nav-link" to="/react/logout" onClick={() => handleLogout()}>
+              <Link className="nav-link" to="/react_app/userLogout" onClick={() => handleLogout()}>
                 Logout
               </Link>
             </li>
@@ -51,7 +51,7 @@ const NavBar = () => {
 
           {authenticate === false && (
             <li className="nav-item">
-              <NavLink className="nav-link" to="/react/login">
+              <NavLink className="nav-link" to="/react_app/userLogin">
                 Login
               </NavLink>
             </li>
@@ -59,7 +59,7 @@ const NavBar = () => {
 
           {authenticate === false && (
             <li className="nav-item">
-              <NavLink className="nav-link" to="/react/register">
+              <NavLink className="nav-link" to="/react_app/userRegister">
                 Register
               </NavLink>
             </li>

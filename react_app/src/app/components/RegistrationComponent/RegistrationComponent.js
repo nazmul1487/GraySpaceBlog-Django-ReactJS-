@@ -21,7 +21,7 @@ const Registration = (props) => {
     };
     postRegistration(data)
       .then(() => {
-        props.history.push("/react/login");
+        props.history.push("/react_app/userLogin");
         alert("Registration Successfully Completed..");
       })
       .catch(() => {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-
 import NavBar from "../app/common/NavBar/NavBar";
 import Footer from "../app/common/Footer/Footer";
 import Register from "../app/components/RegistrationComponent/RegistrationComponent";
@@ -16,15 +15,15 @@ const BaseRoute = () => {
       <NavBar />
       <main className="container">
         <Switch>
-           <Redirect from="/" exact to="/react/posts" />
-           <Redirect from="/react" exact to="/react/posts" />
-           <Route path="/react/posts" exact component={Post}/>
-           <Route path="/react/posts/:id" exact component={PostDetails}/>
-           <Route path="/react/register" component={Register}/>
-           <Route path="/react/login" component={Login}/>
-           <Route path="/react/logout" component={Logout}/>
-          <Route path="/react/not-found" exact component={NotFound}/>
-          <Redirect to="/react/not-found" />
+           <Redirect from="/" exact to="/react_app/posts" />
+           <Redirect from="/react_app" exact to="/react_app/posts" />
+           <Route path="/react_app/posts" exact component={Post}/>
+           <Route path="/react_app/posts/:id" exact component={PostDetails}/>
+           <Route path="/react_app/userRegister" component={Register}/>
+           <Route path="/react_app/userLogin" component={Login}/>
+           <Route path="/react_app/userLogout" component={Logout}/>
+          <Route path="/react_app/not-found" exact component={NotFound}/>
+          <Redirect to="/react_app/not-found" />
         </Switch>
       </main>
       <Footer />
