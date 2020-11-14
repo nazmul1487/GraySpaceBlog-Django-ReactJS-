@@ -1,5 +1,19 @@
 # Blog Django Example App
 
+##Setup the Application
+- Clone the repository
+
+  `$ git clone https://github.com/nazmul1487/grayspaceit-blog`
+
+- Create Virtual environment and install dependencies
+  ```sh
+  $ virtualenv env
+  $ source ./env/bin/activate
+  $ pip install -r requirements.txt
+  ```  
+
+##Run the Application
+   
 ## Deploy to Heroku
 
 You can deploy this app yourself to Heroku to play with.
