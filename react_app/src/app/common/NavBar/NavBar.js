@@ -4,7 +4,7 @@ import { verifyToken } from "../../api_services/authenticationsAPIService";
 
 const handleLogout = () => {
   localStorage.setItem("accessToken", null);
-  window.location.href = "/react/logout";
+  window.location.href = "/react_app/userLogout";
 };
 
 const NavBar = () => {
@@ -26,7 +26,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar  navbar-expand-lg navbar-dark bg-dark ">
-      <Link className="navbar-brand" to="/react">
+      <Link className="navbar-brand" to="/react_app">
         Example Blog
       </Link>
       <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
