@@ -84,6 +84,7 @@
 <script src="{% static  'js/jqBootstrapValidation.js' %}"></script>
 <script src="{% static  'js/contact_me.js' %}"></script>
 <script src="{% static 'js/toastr.min.js' %}"></script>
+<script src="{% static 'js/notify.min.js' %}"></script>
 
 
 {% block extra_script %}
@@ -93,9 +94,9 @@
     <script>
         {% for message in messages %}
             {% if message.tags == 'success' %}
-                toastr.success("{{ message }}");
+              $.notify('{{ message }}', "success");
             {% else %}
-                toastr.error("{{ message }}")
+                $.notify('{{ message }}', "warn");
             {% endif %}
         {% endfor %}
     </script>
