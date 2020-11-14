@@ -153,3 +153,5 @@ STATICFILES_DIRS = [str(BASE_DIR / "static")]
 AUTH_USER_MODEL = 'authentication.User'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/auth/login/'
+
+REACT_APP_DIR = os.path.join(BASE_DIR, 'react_app')
