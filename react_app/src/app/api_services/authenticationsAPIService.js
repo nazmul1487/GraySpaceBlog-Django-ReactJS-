@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = "https://grayspace-blog.herokuapp.com/";
+const api = "https://grayspace-blog.herokuapp.com/api";
 
 const verifyToken = (token) =>{
   return axios.post(api + "token/verify/", token);
