@@ -4,6 +4,7 @@
 It is best to use the python `virtualenv` tool to build locally:
 
 - **Clone the repository**
+
 ```sh
  $ git clone https://github.com/nazmul1487/grayspaceit-blog
  $ cd example-blog-main
