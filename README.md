@@ -1,9 +1,10 @@
-#Example Blog App (Integrate Django and React)
+# Example Blog App (Integrate Django and React)
 
-##Setup the Application
+## Setup the Application
 It is best to use the python `virtualenv` tool to build locally:
 
 - **Clone the repository**
+
 ```sh
  $ git clone https://github.com/nazmul1487/grayspaceit-blog
  $ cd example-blog-main
@@ -19,7 +20,7 @@ It is best to use the python `virtualenv` tool to build locally:
   $ pip install -r requirements.txt
   ```  
 
-##Run the Application
+## Run the Application
 Migrations and migrate 
    ```sh
   $ python manage.py makemigrations
@@ -31,11 +32,11 @@ Run server
   ```
 visit http://127.0.0.1:8000 to view the application
 
-##React Application
+## React Application
  - **React App Directory**: `example-blog-main/react_app`
  - **React build files**: `example-blog-main/react_app/serve`
  
-##Run React Application
+## Run React Application
 
 - **You can run react application separately**.
  
