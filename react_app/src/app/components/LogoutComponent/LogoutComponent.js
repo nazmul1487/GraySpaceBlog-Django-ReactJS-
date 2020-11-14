@@ -10,7 +10,7 @@ const Logout = () => {
       <h2>You have been logged out.</h2>
       <div className="border-top pt-3">
         <p style={{color:"red"}}> Do you want to Login Again?
-          <Link className="btn btn-primary" style={{marginLeft:"10px"}} to="/react/login">
+          <Link className="btn btn-primary" style={{marginLeft:"10px"}} to="/react_app/userLogin">
             Log in
           </Link>
         </p>
