@@ -45,8 +45,8 @@
             <li class="page-item" id="newer" style="cursor: pointer">
                 <a id="previous" class="page-link">&larr; Newer</a>
             </li>
-            <li class="page-item" id="older">
-                <a id="next" class="page-link" style="cursor: pointer">Older &rarr;</a>
+            <li class="page-item" id="older" style="cursor: pointer">
+                <a id="next" class="page-link" >Older &rarr;</a>
             </li>
         </ul>
 
@@ -54,13 +54,12 @@
   <!-- /.container -->
 {% endblock container %}
 
+{% block jq %}
     <script>
         var urlParams = new URLSearchParams(window.location.search);
         urlParams.has('page')? window.pageNumer = parseInt(urlParams.get('page')): window.pageNumer = 1;
         $(document).ready(function () {
              window.pageNumer >= 19 ? document.getElementById("older").classList.add("disabled"): ""
-             window.pageNumer >= 1 ? document.getElementById("newer").classList.remove("disabled"): ""
-             window.pageNumer < 20 ? document.getElementById("older").classList.remove("disabled"): ""
              window.pageNumer === 1 ? document.getElementById("newer").classList.add("disabled"): ""
             $("#previous").click(function () {
                 window.location.href = '/?page=' + (window.pageNumer - 1);
@@ -70,3 +69,4 @@
             })
         })
     </script>
+{% endblock %}
